@@ -1,0 +1,211 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+:root{
+    --bkg-clr: #e3e7ea;
+    --font-clr: #e5e6ee;
+   
+    --orange: #ff9900;
+    --clr-white: #ffffff; 
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    max-width: 160rem;
+    scrollbar-color: #666 #201c29; 
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0; 
+    background-color: var(--bkg-color); 
+}
+
+/* Add in flex or grid for layout */
+/* .container{
+    display:grid;
+    grid-template-areas: 
+    "header header"
+    "aside main"
+    "aside main";
+    grid-template-rows: 15rem 1fr;
+    grid-template-columns: 25% 75%;
+    grid-gap: 5px;
+}  */
+
+.container{
+    display:grid;
+    grid-template-columns: 1fr 2.5fr;
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-areas:
+    "header header"
+    "aside main";
+}
+header{
+    display:grid;
+    grid-area: header;  
+    grid-column-start: span 3;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    background: linear-gradient(to right, #283048, #859398);
+    color: var(--font-clr);
+    height: 15rem;
+    margin-bottom: .5rem;
+}
+
+
+.banner{
+    background:  #47487e;
+    box-shadow: 0 4px 30px rgba(0,0,0,.5);
+
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+   font-size: 5em;
+   color: var(--font-clr);
+   font-family: 'Archivo Narrow', sans-serif;
+}
+
+h2{
+   font-size: 1.5em;
+   color: var(--font-clr);
+   font-family: 'Archivo Narrow', sans-serif;
+}
+
+
+aside {
+    grid-area: aside;
+    color: #e5e6ee;
+    width: 15rem;
+    padding-left: 20px;
+    height: 50rem;
+    background-image: linear-gradient(30deg , #000046, #7f82ab);
+    border-top-right-radius: 80px;
+    box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+aside a {
+    font-size: 1.0em;
+    font-family: 'Libre Franklin', sans-serif;
+    color: #fff;
+    display: block;
+    margin-bottom: 15px;
+    padding: 12px;
+    padding-left: 15px;
+    text-decoration: none;
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+.active {
+    font-weight: 600;
+    color: #000657;
+    background: var(--orange);
+    outline: none;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+aside a:hover, aside a:active {
+    font-weight: 600;
+    color: #000657;
+    background: var(--orange);
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    background-color: #ffa500;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+aside a i, aside i {
+    margin-right: 5px;
+}
+
+aside a:hover::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    bottom: 100%;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-bottom-right-radius: 18px;
+    box-shadow: 0 20px 0 0 #ffa500;
+}
+
+aside a:hover::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 100%;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 -20px 0 0 #ffa500;
+}
+
+aside h2 {
+    margin: 0;
+    padding: 30px 0;
+}
+
+.description{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 30px 0;
+}
+
+section{
+    display: grid;
+    grid-area: main;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.card{
+    background-color: #859398;
+    color: var(--font-clr);
+    font-family: 'Libre Franklin', sans-serif;
+    height: 500px;
+    max-width: 45rem;
+    margin-top: 1rem;
+    border: 2.5px dashed #ff9900;
+}
+
+.card2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    background: #fff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    filter: drop-shadow(2px 2px 5px #dedede);
+}
