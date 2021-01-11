@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
 
@@ -25,24 +25,28 @@
             <i class="fab fa-buffer" aria-hidden="true"></i>
             Available Files
           </a>
-          <a href="/archive.html" id="archive">
+          <a href="./archive.html" id="archive">
             <i class="fas fa-archive" aria-hidden="true"></i>
             Archive Files
           </a>
-          <a href="/encode.html" id="encode">
+          <a href="./encode.html" id="encode">
             <i class="fa fa-upload" aria-hidden="true"></i>
             Encode Video Files
           </a>
-          <a href="/s3.html" class="active" id="s3">
+          <a href="./s3.html" id="s3">
             <i class="fas fa-photo-video" aria-hidden="true"></i>
            S3 Bucket
           </a>
-          <a href="/search.html" id="search">
+          <a href="./search.html" class="active" id="search">
             <i class="fas fa-search" aria-hidden="true"></i>
             Search Archive 
           </a>
-          
-          <div class="description"><i class="fas fa-info-circle"></i>List of available files, that have been pulled down from AWS server, and can now be downloaded to your local computer</i>.</div>
+
+          <div class="description">
+            <p><i class="fas fa-info-circle"></i>The user can search the archive for files by typing a file name in the search bar or navigating to the specific folder.</p>
+            <p>12-Hour Restore: for an immediate need (i.e. impacting students in live lessons). <br/>
+              48-Hour Restore: anything else. 
+            </p></div>
           
         </aside>
         
@@ -50,9 +54,14 @@
           <div class="card">
             Available Files
           </div>
+
           <div class="card2">
-             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, accusantium.
+            <p>12-Hour Restore: for an immediate need (i.e. impacting students in live lessons). </p>
+            <p>
+              48-Hour Restore: anything else. 
+            </p>
           </div>
+          
         </section>
         
     </div>

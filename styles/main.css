@@ -176,11 +176,11 @@ aside h2 {
     padding: 30px 0;
 }
 
-.description{
+aside .description{
     font-family: 'Noto Sans', sans-serif;
     font-size: 0.9em;
     margin: 0;
-    padding: 30px 0;
+    padding: 1.5rem .5rem;
 }
 
 section{
@@ -191,9 +191,10 @@ section{
 }
 
 .card{
-    background-color: #859398;
-    color: var(--font-clr);
+    background-color: #eceff2;
+    color: #535a62;
     font-family: 'Libre Franklin', sans-serif;
+    font-weight: 600;
     height: 500px;
     max-width: 45rem;
     margin-top: 1rem;
@@ -204,8 +205,12 @@ section{
     font-family: 'Poppins', sans-serif;
     font-size: 1em;
     background: #fff;
-    padding: 10px 30px;
+    padding: 10px 10px;
     border-radius: 30px;
     box-sizing: border-box;
     filter: drop-shadow(2px 2px 5px #dedede);
+}
+
+.card2 p{
+    margin-top: 1rem;
 }
