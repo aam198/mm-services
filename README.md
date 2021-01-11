@@ -4,7 +4,7 @@
 ## Contribute
 To contribute, Fork! 
 
-## Fork Repo
+## Fork mm-services Repository
 On GitHub, navigate to repository and select <strong>Fork</strong> (top-right corner of the page).
 
 ## Clone the fork repo to local machine
