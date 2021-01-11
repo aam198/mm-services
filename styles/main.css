@@ -10,7 +10,7 @@
 
 :root{
     --bkg-clr: #e3e7ea;
-    --font-clr: #e5e6ee;
+    --font-clr: #F6F7F9;
    
     --orange: #ff9900;
     --clr-white: #ffffff; 
@@ -192,7 +192,7 @@ section{
 
 .card{
     background-color: #eceff2;
-    color: #535a62;
+    color: #000657;
     font-family: 'Libre Franklin', sans-serif;
     font-weight: 600;
     height: 500px;
@@ -202,6 +202,7 @@ section{
 }
 
 .card2{
+    color: #535a62;
     font-family: 'Poppins', sans-serif;
     font-size: 1em;
     background: #fff;
