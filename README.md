@@ -2,7 +2,7 @@
 
 > Documentation is currently under construction. :) 
 ## Contribute
-To contribute, Fork and Create Local Repo Clone
+To contribute, Fork! 
 
 ## Fork Repo
 On GitHub, navigate to repository and select <strong>Fork</strong> (top-right corner of the page).
