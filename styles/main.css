@@ -12,6 +12,8 @@
     --bkg-clr: #e3e7ea;
     --font-clr: #F6F7F9;
     --font-dark: #000657;
+
+    --font-body:'Libre Franklin', sans-serif;
    
     --orange: #ff9900;
     --clr-white: #ffffff; 
@@ -21,6 +23,7 @@
     --card-bg-color:rgba( 48 72 106 / 20%);
     --card-content-clr:rgba(246 247 249 / 45%);
 
+    --login-border:rgba(249 250 251 /80%);
     --border-color: rgba(113 119 144 / 25%);
     --inactive-color: rgb(113 119 144 / 78%);
     --content-title-color: #999ba5;
@@ -48,18 +51,6 @@ body {
     background-color: #F6F7F9;
 }
 
-/* Add in flex or grid for layout */
-/* .container{
-    display:grid;
-    grid-template-areas: 
-    "header header"
-    "aside main"
-    "aside main";
-    grid-template-rows: 15rem 1fr;
-    grid-template-columns: 25% 75%;
-    grid-gap: 5px;
-}  */
-
 .container{
     display:grid;
     grid-template-columns: 18rem 2.5fr;
@@ -68,25 +59,59 @@ body {
     "header header"
     "aside main";
 }
+
+/* Beginning of Header Styling */
 header{
-    grid-area: header;
+  grid-area: header;
   max-width: 100%;
+  height: 14rem;
   background-color: #495057;
   color: var(--font-clr);
-  height: 14rem;
   margin-bottom: .5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-
 
 .banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--banner-color);
     box-shadow: 0 4px 30px rgba(0,0,0,.5);
+    height: 100%;
+}
+
+
+.header-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    padding: 0 16px 0 40px;
+    cursor: pointer;
+}
+
+.profile-img {
+    border: 2px solid var(--login-border);
+    width: 5rem;
+    height: 5rem;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
+   }
+
+.profile-img:hover{
+    border: 2px solid #f9fafb;
+}
+
+.login-title{
+    font-family: var(--font-body);
+    
 
 }
 
+/* Spacing / Headings Styling */
 .flex-center{
     display: flex;
     align-items: center;
@@ -105,7 +130,7 @@ h2{
    font-family: 'Archivo Narrow', sans-serif;
 }
 
-
+/* Sidebar Styling  */
 aside {
     grid-area: aside;
     color: var(--font-clr);
@@ -194,8 +219,13 @@ aside .description{
     margin: 0;
     padding: 1.5rem .5rem;
 }
+.description p{
+    padding-bottom: 1rem;
+}
+/* End of Sidebar Styling */
 
-/* Beginning of main section */
+
+/* Styling for Main Section */
 section{
     display: grid;
     grid-area: main;
@@ -206,9 +236,8 @@ section{
 .card{
     background-color: var(--card-bg-color);
     max-width: 1400px;
-    max-height: 860px;
     margin-right: 4%;
-    height: 80vh;
+    height: 40rem;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -244,8 +273,9 @@ section{
     font-size: 1em;
     background: #fff;
     padding: 10px 10px;
-    border-radius: 30px;
+    border-radius: 8px;
     box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
     filter: drop-shadow(2px 2px 5px #dedede);
     margin-top: 1rem;
 }
@@ -254,8 +284,8 @@ section{
     margin-top: 1rem;
 }
 
-/* Search bar */
 
+/* Search bar Styling */
 
 .search-bar {
     height: 40px;
@@ -296,3 +326,38 @@ section{
      border-color: #000657;     
      box-shadow: 0 0 5px #000657;
    }
+
+   /* End of Styling for Search Bar */
+
+   /* Buttons */
+
+.button{
+    display: flex;
+    justify-self: flex-end;
+    padding-top: 1rem;
+
+}
+.btn{
+    font-size: 1.5em;
+    font-family: var(--font-body);
+    cursor: pointer;
+    display:inline-block;
+    width: 10rem;
+    height: 4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    background:#2d4469;
+    text-decoration: none;
+    color: var(--font-clr);
+    border: 0.1rem solid rgb(53, 223,233, 0.5);
+}
+
+   /* Dialog / Modal Containers */
+
+.dialog {
+background: #fff;
+border-radius: 8px;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+padding: 35px;
+text-align: center;
+}
