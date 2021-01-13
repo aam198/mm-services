@@ -11,9 +11,20 @@
 :root{
     --bkg-clr: #e3e7ea;
     --font-clr: #F6F7F9;
+    --font-dark: #000657;
    
     --orange: #ff9900;
     --clr-white: #ffffff; 
+
+    --banner-color: #000657;
+
+    --card-bg-color:rgba( 127 130 171 / 15%);
+    --card-content-clr:rgba(246 247 249 / 45%);
+
+    --border-color: rgba(113 119 144 / 25%);
+    --inactive-color: rgb(113 119 144 / 78%);
+    --content-title-color: #999ba5;
+    --search-bg:  #e3e7ea;
 }
 
 *,
@@ -34,7 +45,7 @@ body {
     width: 100%;
     height: 100vh;
     margin: 0; 
-    background-color: var(--bkg-color); 
+    background-color: #F6F7F9;
 }
 
 /* Add in flex or grid for layout */
@@ -51,28 +62,27 @@ body {
 
 .container{
     display:grid;
-    grid-template-columns: 1fr 2.5fr;
+    grid-template-columns: 18rem 2.5fr;
     grid-template-rows: 0.1fr 1fr;
     grid-template-areas:
     "header header"
     "aside main";
 }
 header{
-    display:grid;
-    grid-area: header;  
-    grid-column-start: span 3;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    background: linear-gradient(to right, #283048, #859398);
-    color: var(--font-clr);
-    height: 15rem;
-    margin-bottom: .5rem;
+    grid-area: header;
+  max-width: 100%;
+  background-color: #495057;
+  color: var(--font-clr);
+  height: 14rem;
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
 .banner{
-    background:  #47487e;
+    background-color: var(--banner-color);
     box-shadow: 0 4px 30px rgba(0,0,0,.5);
 
 }
@@ -90,7 +100,7 @@ h1{
 }
 
 h2{
-   font-size: 1.5em;
+   font-size: 2em;
    color: var(--font-clr);
    font-family: 'Archivo Narrow', sans-serif;
 }
@@ -98,10 +108,10 @@ h2{
 
 aside {
     grid-area: aside;
-    color: #e5e6ee;
-    width: 15rem;
+    color: var(--font-clr);
+    width: 18rem;
     padding-left: 20px;
-    height: 50rem;
+    height: 48rem;
     background-image: linear-gradient(30deg , #000046, #7f82ab);
     border-top-right-radius: 80px;
     box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.2);
@@ -109,7 +119,7 @@ aside {
 
 
 aside a {
-    font-size: 1.0em;
+    font-size: 1.3em;
     font-family: 'Libre Franklin', sans-serif;
     color: #fff;
     display: block;
@@ -183,25 +193,50 @@ aside .description{
     padding: 1.5rem .5rem;
 }
 
+/* Beginning of main section */
 section{
     display: grid;
     grid-area: main;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin: 1% 1%;
 }
+
 
 .card{
-    background-color: #eceff2;
-    color: #000657;
-    font-family: 'Libre Franklin', sans-serif;
-    font-weight: 600;
-    height: 500px;
-    max-width: 45rem;
-    margin-top: 1rem;
-    border: 2.5px dashed #ff9900;
+    background-color: var(--card-bg-color);
+    max-width: 1444px;
+    max-height: 860px;
+    margin-right: 4%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 14px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    font-size: 15px;
+    font-weight: 500;
 }
 
-.card2{
+.card-header{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 65px;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 30px;
+    white-space: nowrap;
+    color: var(--font-dark);
+}
+.title-center{
+    justify-content: center;
+}
+.card-header h2{
+    color: var(--font-dark);
+}
+
+.card-2{
     color: #535a62;
     font-family: 'Poppins', sans-serif;
     font-size: 1em;
@@ -210,8 +245,52 @@ section{
     border-radius: 30px;
     box-sizing: border-box;
     filter: drop-shadow(2px 2px 5px #dedede);
-}
-
-.card2 p{
     margin-top: 1rem;
 }
+
+.card-2 p{
+    margin-top: 1rem;
+}
+
+/* Search bar */
+
+
+.search-bar {
+    height: 40px;
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    padding-left: 16px;
+    border-radius: 4px;
+   }
+   
+    input {
+     width: 100%;
+     height: 100%;
+     border: none;
+     background-color:  #fff;
+     border-radius: 4px;
+     font-family: 'Libre Franklin', sans-serif;
+     font-size: 18px;
+     font-weight: 500;
+     padding: 0 20px 0 40px;
+     box-shadow: 0 0 0 2px rgb(134 140 160 / 2%);
+     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56.966 56.966' fill='%23717790c7'%3e%3cpath d='M55.146 51.887L41.588 37.786A22.926 22.926 0 0046.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 00.083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z'/%3e%3c/svg%3e");
+     background-size: 20px;
+     background-repeat: no-repeat;
+     background-position: 12px 48%;
+     color: #000657; 
+   }
+   
+     input::placeholder {
+        font-family: 'Libre Franklin', sans-serif;
+      color: var(--inactive-color);
+      font-size: 15px;
+      font-weight: 500;
+     }
+    
+   input:focus, textarea:focus {      
+     outline: none !important;     
+     border-color: #000657;     
+     box-shadow: 0 0 5px #000657;
+   }
