@@ -23,7 +23,7 @@
     --card-bg-color:rgba( 48 72 106 / 20%);
     --card-content-clr:rgba(246 247 249 / 45%);
 
-    --button-clr: rgba(45 68 105 / 85%);
+    --button-clr: rgba(45 68 105 / 100%);
     --button-hover: #1c2c62;
     
 
@@ -338,6 +338,13 @@ section{
 
    /* Buttons */
 
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+
 .button{
     display: flex;
     justify-content: flex-end;
@@ -349,7 +356,7 @@ section{
     font-family: var(--font-body);
     cursor: pointer;
     display:inline-block;
-    width: 10rem;
+    width: 20rem;
     height: 4rem;
     margin-right: 3%;
     border-radius: 6px;
@@ -367,6 +374,17 @@ section{
     transform: translate3d(0px,-1px,0px);
     box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
 }
+.btn input[type=file]{
+    font-size: 100px;
+    opacity: 0;
+}
+/* 
+.upload-btn-wrapper input[type=file] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+} */
    /* Dialog / Modal Containers */
 
 .dialog {
