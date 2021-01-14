@@ -23,6 +23,10 @@
     --card-bg-color:rgba( 48 72 106 / 20%);
     --card-content-clr:rgba(246 247 249 / 45%);
 
+    --button-clr: rgba(45 68 105 / 85%);
+    --button-hover: #1c2c62;
+    
+
     --login-border:rgba(249 250 251 /80%);
     --border-color: rgba(113 119 144 / 25%);
     --inactive-color: rgb(113 119 144 / 78%);
@@ -232,6 +236,9 @@ section{
     margin: 2% 1%;
 }
 
+.main-area{
+    display: in-flex;
+}
 
 .card{
     background-color: var(--card-bg-color);
@@ -333,7 +340,7 @@ section{
 
 .button{
     display: flex;
-    justify-self: flex-end;
+    justify-content: flex-end;
     padding-top: 1rem;
 
 }
@@ -344,14 +351,22 @@ section{
     display:inline-block;
     width: 10rem;
     height: 4rem;
+    margin-right: 3%;
+    border-radius: 6px;
     text-align: center;
     margin-bottom: 1rem;
-    background:#2d4469;
+    background: var(--button-clr);
     text-decoration: none;
     color: var(--font-clr);
-    border: 0.1rem solid rgb(53, 223,233, 0.5);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 }
 
+.btn:hover{
+    background: var(--button-hover);
+    transform: translate3d(0px,-1px,0px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
    /* Dialog / Modal Containers */
 
 .dialog {
