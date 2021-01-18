@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MM Services</title>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.828.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="/styles/main.css">
 </head>
@@ -56,23 +57,33 @@
         <section>
           <div class="main-area">
             <div class="card">
-              
-              <div class="card-header title-center">
-                <h2>Archive </h2>
+              <!-- <div class="card-header title-center"></div> -->
+              <div class="card-header">
+                <h2 class="file-name">File Name </h2>
+                <h2 class="file-location">File Location</h2>
+                <h2 class="file-type">File Type</h2>
+                <h2 class="file-size">File Size</h2>
+                <h2 class="status">Status</h2>
               </div>
 
               <div class="card-content">
+                <p>Browse to Folder location...</p>
               </div>
               
             </div>
 
             <div class="button">
-              <span id="custom-text"></span>
+              <div id="custom-text"></div>
               <input type="file" id="real-file" hidden="hidden" />
-              <button type="button" class="btn" id="addFolder">Upload Folder/File</button>
-              
+
+              <label class="btn button" for="directory" role="button">Add Folder</label>   
+
+              <label class="btn button" for="file" rol="button" id="addFile">Select File</label>
+
+              <input class="hidden" type="file" id="directory" name="directory" directory webkitdirectory></input>
               
             </div>
+
           </div>
 
 
