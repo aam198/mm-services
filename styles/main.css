@@ -10,15 +10,17 @@
 
 :root{
     --bkg-clr: #e3e7ea;
-    --font-clr: #F6F7F9;
-    --font-dark: #000657;
+    --blue-dark: #1c2c62;
+    --blue-med: rgba(45 68 105 / 100%);
 
+    --font-clr: #F6F7F9;
+    --font-dark: #000000;
     --font-body:'Libre Franklin', sans-serif;
    
     --orange: #ff9900;
     --clr-white: #ffffff; 
 
-    --banner-color: #000657;
+    --banner-color: rgba(45 68 105 / 100%);
 
     --card-bg-color:rgba( 48 72 106 / 20%);
     --card-content-clr:rgba(246 247 249 / 45%);
@@ -236,13 +238,14 @@ section{
     margin: 2% 1%;
 }
 
-.main-area{
+/* .main-area{
     display: in-flex;
-}
+} */
 
 .card{
     background-color: var(--card-bg-color);
     max-width: 1400px;
+    min-width: 610px;
     margin-right: 4%;
     height: 40rem;
     display: flex;
@@ -258,6 +261,7 @@ section{
 
 .card-header{
     display: flex;
+    flex-direction: row;
     align-items: center;
     flex-shrink: 0;
     height: 65px;
@@ -265,13 +269,20 @@ section{
     border-bottom: 1px solid var(--border-color);
     padding: 0 30px;
     white-space: nowrap;
-    color: var(--font-dark);
+    color: var(--font-dark);    
 }
 .title-center{
     justify-content: center;
 }
 .card-header h2{
     color: var(--font-dark);
+    font-size: 1.5em;
+    margin-left: 4rem;
+}
+
+.card-content{
+    font-family: var(--font-body);
+    margin: 1rem;
 }
 
 .card-2{
@@ -298,13 +309,14 @@ section{
     height: 40px;
     display: flex;
     width: 100%;
-    max-width: 500px;
     padding-left: 16px;
     border-radius: 4px;
+    padding: 0 30px;
+    margin-top: 1rem;
    }
    
     input {
-     width: 100%;
+     width: 15rem;
      height: 100%;
      border: none;
      background-color:  #fff;
@@ -319,6 +331,7 @@ section{
      background-repeat: no-repeat;
      background-position: 12px 48%;
      color: #000657; 
+     transition: width 0.4s ease-in-out;
    }
    
      input::placeholder {
@@ -332,6 +345,7 @@ section{
      outline: none !important;     
      border-color: #000657;     
      box-shadow: 0 0 5px #000657;
+     width: 65%;
    }
 
    /* End of Styling for Search Bar */
@@ -349,8 +363,15 @@ section{
     display: flex;
     justify-content: flex-end;
     padding-top: 1rem;
-
 }
+
+
+#custom-text{
+    display:flex;
+    align-items: center;
+    padding-right: 1rem;
+}
+
 .btn{
     font-size: 1.5em;
     font-family: var(--font-body);
@@ -378,6 +399,11 @@ section{
     font-size: 100px;
     opacity: 0;
 }
+
+.hidden{
+    display: none;
+}
+
 /* 
 .upload-btn-wrapper input[type=file] {
     position: absolute;
@@ -385,6 +411,76 @@ section{
     top: 0;
     opacity: 0;
 } */
+
+
+/* Check Mark Styling */
+.checkbox-container {
+    display:flex;
+    position: relative;
+    margin-bottom: 25px;
+    padding: 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+/* To hide the browser's default checkbox */
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+/* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color:  #fff;
+  }
+/* On mouse-over, add a grey background color */
+  .checkbox-container:hover input ~ .checkmark {
+   border: 1px solid var(--blue-med);
+   border-color: var(--blue-med);
+  }
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--blue-dark);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 7px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+/* End of Checkbox Styling */
+
    /* Dialog / Modal Containers */
 
 .dialog {
