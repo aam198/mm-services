@@ -383,7 +383,7 @@ section{
     border-radius: 6px;
     text-align: center;
     margin-bottom: 1rem;
-    background: var(--button-clr);
+    background-color: var(--button-clr);
     text-decoration: none;
     color: var(--font-clr);
     transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
@@ -391,7 +391,7 @@ section{
 }
 
 .btn:hover{
-    background: var(--button-hover);
+    background-color: var(--button-hover);
     transform: translate3d(0px,-1px,0px);
     box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
 }

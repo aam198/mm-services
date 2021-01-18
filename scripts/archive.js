@@ -1,6 +1,9 @@
 const realFileBtn = document.getElementById("real-file");
 const customBtn = document.getElementById("addFolder");
+
+const addFileBtn = document.getElementByID("addFile");
 const customTxt = document.getElementById("custom-text");
+
 
 customBtn.addEventListener("click", function() {
   realFileBtn.click();
