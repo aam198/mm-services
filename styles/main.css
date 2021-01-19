@@ -59,7 +59,7 @@ body {
 
 .container{
     display:grid;
-    grid-template-columns: 18rem 2.5fr;
+    grid-template-columns: 17rem 2.5fr;
     grid-template-rows: 0.1fr 1fr;
     grid-template-areas:
     "header header"
@@ -140,10 +140,11 @@ h2{
 aside {
     grid-area: aside;
     color: var(--font-clr);
+    margin-top: .8rem;
     min-height: 60rem;
     max-height: 860px;
-    width: 18rem;
-    padding-left: 20px;
+    width: 17rem;
+    padding-left: 15px;
     height: 47rem;
     background-image: linear-gradient(20deg , #000657, #30486a);
     border-top-right-radius: 80px;
@@ -158,7 +159,7 @@ aside a {
     display: block;
     margin-bottom: 15px;
     padding: 12px;
-    padding-left: 15px;
+    padding-left: 10px;
     text-decoration: none;
     -webkit-tap-highlight-color:transparent;
 
@@ -209,7 +210,7 @@ aside a:hover::before {
     top: 100%;
     right: 0;
     height: 35px;
-    width: 35px;
+    width: 30px;
     border-top-right-radius: 18px;
     box-shadow: 0 -20px 0 0 #ffa500;
 }
@@ -235,7 +236,9 @@ aside .description{
 section{
     display: grid;
     grid-area: main;
-    margin: 2% 1%;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 2.5%;
 }
 
 /* .main-area{
@@ -244,13 +247,13 @@ section{
 
 .card{
     background-color: var(--card-bg-color);
-    max-width: 1400px;
-    min-width: 610px;
-    margin-right: 4%;
-    height: 40rem;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    max-width: 1400px;
+    min-width: 610px;
+    margin-right: 4%;
+    height: 50rem;
     width: 100%;
     border-radius: 14px;
     backdrop-filter: blur(20px);
@@ -301,10 +304,14 @@ section{
 .card-2 p{
     margin-top: 1rem;
 }
+/* End Styling for Main Area - Cards */
 
 
 /* Search bar Styling */
 
+.card-search {
+    margin-bottom: .8rem;
+}
 .search-bar {
     height: 40px;
     display: flex;
@@ -348,10 +355,10 @@ section{
      width: 65%;
    }
 
-   /* End of Styling for Search Bar */
+/* End of Styling for Search Bar */
 
-   /* Buttons */
 
+/* Buttons */
 
 .upload-btn-wrapper {
     position: relative;
@@ -480,6 +487,33 @@ section{
   }
   
 /* End of Checkbox Styling */
+
+/* Card Header text spacing when Checkbox is included */
+
+h2.file-name-check{
+    width: 20%;
+    display: inline-flex;
+    justify-content: center;
+}
+h2.file-location-check{
+    width: 50%;
+    text-align: center;
+}
+h2.file-type-check{
+   display:inline-flex;
+   justify-content: center;
+   width: 10%;
+}
+h2.file-size-check{
+    display:inline-flex;
+    justify-content: center;
+    width: 10%;
+}
+h2.status-check{
+    display: inline-flex;
+    justify-content: center;
+    width: 10%;
+}
 
    /* Dialog / Modal Containers */
 
