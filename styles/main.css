@@ -87,7 +87,7 @@ header{
     background-color: var(--banner-color);
     box-shadow: 0 4px 30px rgba(0,0,0,.5);
     height: 100%;
-    min-width: 860px;
+    min-width: 850px;
 }
 
 
@@ -118,7 +118,6 @@ header{
 
 .login-title{
     font-family: var(--font-body);
-    
 
 }
 
@@ -553,4 +552,43 @@ border-radius: 8px;
 box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 padding: 35px;
 text-align: center;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 860px){
+    .container{
+        display:grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 0.1fr 1fr;
+        grid-template-areas:
+        "header header"
+        "aside main";
+    }
+
+    h1{
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    aside{
+        width: 14rem;
+    }
+    aside a{
+        font-size: 1.2em;
+    }
+    .banner{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        min-width: 300px;
+        padding-left: 1rem;
+    }
+
+    .card-header h2{
+        margin-left: 2rem;
+    }
+    
 }
