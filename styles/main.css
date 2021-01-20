@@ -241,9 +241,8 @@ aside .description{
 section{
     display: grid;
     grid-area: main;
-    margin-right: 1%;
-    margin-left: 1%;
-    margin-top: 2.5%;
+    margin: 2.5% 1%;
+    
 }
 
 /* .main-area{
