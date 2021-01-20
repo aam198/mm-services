@@ -398,11 +398,12 @@ section{
     display: inline-block;
   }
 
-.button{
+.button, .add-button, .restore-button {
     display: flex;
     justify-content: flex-end;
     padding-top: 1rem;
 }
+
 
 
 #custom-text{
@@ -416,7 +417,7 @@ section{
     font-family: var(--font-body);
     cursor: pointer;
     display:inline-block;
-    width: 20rem;
+    width: 15rem;
     height: 4rem;
     margin-right: 3%;
     border-radius: 6px;
