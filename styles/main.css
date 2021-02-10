@@ -61,33 +61,37 @@ body {
     line-height: 1.2;
 }
 
-.container{
+.container_grid{
     display:grid;
     grid-template-columns: 17rem 2.5fr;
     grid-template-rows: 0.1fr 1fr;
     grid-template-areas:
     "header header"
-    "aside main";
+    "nav main";
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
 }
 
 /* Beginning of Header Styling */
-header{
-    grid-area: header;
-    max-width: 100%;
+
+
+#header{
+    grid-area:header;
     height: 13rem;
-    background-color: #495057;
     color: var(--font-clr);
     margin-bottom: .5rem;
-}
-
-.banner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: var(--banner-color);
     box-shadow: 0 4px 30px rgba(0,0,0,.5);
+}
+
+#headerContainer   {
+    display: flex;
     height: 100%;
-    min-width: 850px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -120,6 +124,7 @@ header{
     font-family: var(--font-body);
 
 }
+/* End of Header Styling */
 
 /* Spacing / Headings Styling */
 .flex-center{
@@ -140,9 +145,11 @@ h2{
    font-family: 'Archivo Narrow', sans-serif;
 }
 
-/* Sidebar Styling  */
+/* Nav/ Sidebar Styling  */
+#nav{
+    grid-area: nav;
+}
 aside {
-    grid-area: aside;
     color: var(--font-clr);
     margin-top: .4rem;
     min-height: 60rem;
@@ -241,7 +248,6 @@ section{
     display: grid;
     grid-area: main;
     margin: 2.5% 1%;
-    
 }
 
 /* .main-area{
@@ -252,9 +258,8 @@ section{
     background-color: var(--card-bg-color);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     max-width: 1400px;
-    min-width: 300px;
+    min-width: 900px;
     margin-right: 4%;
     height: 50rem;
     width: 100%;
@@ -559,13 +564,13 @@ text-align: center;
 /* Media Queries */
 
 @media (max-width: 860px){
-    .container{
+    .container_grid{
         display:grid;
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 0.1fr 1fr;
         grid-template-areas:
         "header header"
-        "aside main";
+        "nav main";
     }
 
     h1{
@@ -580,16 +585,11 @@ text-align: center;
     aside a{
         font-size: 1.2em;
     }
-    .banner{
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        min-width: 300px;
-        padding-left: 1rem;
+   
+    .card-header > h2{
+        display:flex;
+        justify-content: flex-start;
     }
-
-    .card-header h2{
-        margin-left: 2rem;
-    }
+    
     
 }
