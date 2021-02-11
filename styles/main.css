@@ -590,6 +590,31 @@ text-align: center;
         display:flex;
         justify-content: flex-start;
     }
-    
-    
 }
+
+@media (max-width: 540px) {
+    #sidenav-open {
+        visibility: hidden;
+        transform: translateX(-110vw);
+        will-change: transform;
+        transition: 
+          transform var(--duration) var(--easeOutExpo),
+          visibility 0s linear var(--duration);
+    }
+    #sidenav-open:target{
+     visibility: visible;
+     transform: translateX(0);
+     transition: 
+      transform var(--duration) var(--easeOutExpo);
+    }
+}
+
+#sidenav-open {
+    --duration: .6s;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    #sidenav-open {
+      --duration: 1ms;
+    }
+  }
