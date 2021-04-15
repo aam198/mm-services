@@ -403,10 +403,10 @@ section{
     display: inline-block;
   }
 
-.button, .add-button, .restore-button {
+.dl-button, .add-button, .restore-button {
     display: flex;
     justify-content: flex-end;
-    padding-top: 1rem;
+    padding: 1rem;
     max-width: 1400px;
 }
 
@@ -427,6 +427,7 @@ section{
     display:inline-block;
     width: 15rem;
     height: 4rem;
+    padding: 1rem;
     margin-right: 3%;
     border-radius: 6px;
     text-align: center;
