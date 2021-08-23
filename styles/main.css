@@ -9,7 +9,7 @@
 
 
 :root{
-    --bkg-clr: #e3e7ea;
+    --bkg-clr: #2f4858;
     --blue-dark: #1c2c62;
     --blue-med: rgba(45 68 105 / 100%);
 
@@ -17,7 +17,7 @@
     --font-dark: #000657;
     --font-body:'Libre Franklin', sans-serif;
     
-   
+    --dashed: rgba(45 68 105 / 100%);
     --orange: #ff9900;
     --clr-white: #ffffff; 
 
@@ -145,7 +145,10 @@ h2{
    font-family: 'Archivo Narrow', sans-serif;
 }
 
+
+
 /* Nav/ Sidebar Styling  */
+
 #nav{
     grid-area: nav;
 }
@@ -252,7 +255,6 @@ section{
 }
 
 
-
 .card{
     background-color: var(--card-bg-color);
     display: flex;
@@ -344,6 +346,299 @@ section{
 /* End Styling for Main Area - Cards */
 
 
+/* Drag and Drop Area Archive Area */
+
+
+li{
+  display: flex;
+  justify-content:space-between;
+  margin-bottom: 10px;
+}
+
+
+li span{
+  margin-top: 5px;
+}
+
+
+li i {
+  color: var(--red-clr);
+  cursor: pointer;
+  font-size: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+
+li i:hover{
+  color: var(--red-clr-hover);
+}
+
+/* Take out Remove button? */
+.remove-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 5px 5px;
+  border: 1px solid #dd3c3c;
+  color: #F6F7F9;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.25s ease, background-color 0.4s ease;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.remove-btn{
+  background-color: var(--red-clr-hover);
+}
+
+/* Drag and Drop Area Progress Bar */
+
+.drag-area{
+  border: 2px dashed var(--bkg-clr);
+  height: 500px;
+  width: 700px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.drag-area.active{
+  border: 2px dashed var(--ylw-clr);
+}
+
+.drag-area .icon{
+  font-size: 4rem;
+  color: var(--ylw-clr);
+}
+
+.drag-area header{
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--blue-font-clr);
+}
+
+.drag-area span{
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--blue-font-clr);
+  margin: 10px 0 15px 0;
+}
+.drag-area .btn{
+  padding: 10px 25px;
+  border: none;
+  background: rgba(45 68 105 / 100%);
+  color: #F6F7F9;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+
+
+.drag-area .btn:focus{
+  outline: 2px dashed var(--ylw-clr);
+}
+
+.drag-area img {
+  height: 50%;
+  width: 50%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.btn:disabled{
+  cursor: not-allowed;
+  background-color: #e0e0e0;
+  border: 1px dashed #292929;
+}
+
+/* Drag and Drop Area Progress Bar */
+
+.progress{
+  margin: 10px 0;
+  background:
+   linear-gradient(orange 0 0) left/0% 100% no-repeat
+   lightblue;
+   border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+@keyframes p2 {
+  100% {background-size:110% 100%}
+}
+
+progress[value]::-webkit-progress-bar, progress[value]::-webkit-progress-value {
+  background-color: var(--ylw-clr);
+  border-radius: 20px;
+}
+
+
+progress[value]::-moz-progress-bar {
+  background-color: var(--progress-ylw);
+  border-radius: 20px;
+}
+ #progress-bar{
+  height: 22px;
+  margin: 10px 0;
+  background-color: var(--ylw-clr);
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+
+progress[value]{
+  appearance:none;
+  background-color: green;
+}
+
+.continue-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap:10px;
+}
+
+
+/* Drag and Drop Area Modal Styles */
+.modal{
+  display: flex;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 200px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+.modal-box {
+  margin: auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 5px;
+  width: 35%;
+  min-width: 450px;
+  position: relative;
+  z-index: 10;
+}
+
+.modal-box h2 {
+  margin-bottom: 5px;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.modal-box .close{
+  color: rgba(45 68 105 / 100%);
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.modal-box .close:hover {
+  color: var(--ylw-clr);
+  cursor: pointer;
+}
+
+.modal-box .content {
+  overflow: auto;
+  padding: 30px 30px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.modal-box .navigation{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+
+}  
+.modal-box .btn-sm {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: none;
+  background: rgba(45 68 105 / 100%);
+  color: #F6F7F9;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.25s ease, background-color 0.4s ease;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+.btn-sm:hover{
+  background-color:#1c2c62;
+  transform: translate3d(0px,-1px,0px);
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+
+.btn-sm:focus {
+outline: 2px dashed var(--ylw-clr);
+}
+
+#upload-s3:hover{
+background-color: var(--ylw-clr);
+}
+
+#backBtn, .remove-btn {
+background-color: var(--red-clr);
+border: 1px solid #dd3c3c;
+}
+
+#backBtn:hover, .remove-btn:hover{
+background-color: #de3838;
+}
+
+@media screen and (max-width: 700px){
+  .modal-box{
+    width: 100%;
+}
+}
+
+/* Animation  */
+
+.fadeIn {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeOut{
+  animation: fadeOut 1s;
+}
+
+@keyframes fadeOut{
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /* Search bar Styling */
 
 .card-search {
@@ -403,7 +698,7 @@ section{
     display: inline-block;
   }
 
-.dl-button, .add-button, .restore-button {
+.dl-button, .add-button, .restore-button .btn.next {
     display: flex;
     justify-content: flex-end;
     padding: 1rem;

@@ -67,11 +67,49 @@
 
               <div class="card-content">
                 <p>Upload Files. Browse to Folder location...</p>
+
+                <ul></ul>
+
+                <div class="drag-area" id="drop-area">
+                  <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <header> Drag & Drop to Upload the File</header>
+                               <span>OR</span>
+                      <button class="btn upload" id="browse-btn" onchange="handleFiles(this.files)">Browse Files</button>
+        
+                      <input type = "file" id="fileElem" multiple accept ="image/*" onchange="handleFiles(this.files)" hidden>
+        
+                      <progress type="range" class="progress" id="progress-bar" min="0" max="100" step="0.1" value="0"> </progress>
+
+                  </div>
               </div>
               
             </div>
+            
+          </div>
 
-            <div class="add-button">
+            <div class="continue-container">
+              <button class="btn next" id="nextBtn" disabled >Next</button>
+          
+          
+              <div id="gallery"></div>
+          
+              <div id ="myModal" class="modal">
+                  <div class="modal-box">
+                    <h2>Upload to Archive</h2>
+                    <span class="close"><i class="fas fa-times"></i></span>
+                    <div class="content">
+                           Are you sure you would like to upload this to the archive?
+                       </div>
+                   <div class="navigation">
+                       <button class="btn-sm" id="upload-s3">Yes, Upload!</button>
+                      <button class="btn-sm" id="backBtn">No, Take me back</button>
+                   </div>    
+          
+                  </div>
+                 </div>
+              </div>
+
+            <!-- <div class="add-button">
               <div id="custom-text"></div>
               
               <label class="btn button" for="directory" role="button">Add Folder</label>   
@@ -82,9 +120,9 @@
 
               <input class="hidden" type="file" id="directory" name="directory" directory webkitdirectory></input>
               
-            </div>
+            </div> -->
 
-          </div>
+          
 
 
         </section>
