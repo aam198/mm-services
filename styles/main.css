@@ -64,6 +64,8 @@ body {
     line-height: 1.2;
 }
 
+/* Main Page Containers */
+
 .container_grid{
     display:grid;
     grid-template-columns: 17rem 2.5fr;
@@ -76,6 +78,13 @@ body {
 .container{
     width: 80%;
     margin: 0 auto;
+}
+
+.continue-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap:10px;
 }
 
 /* Beginning of Header Styling */
@@ -129,6 +138,7 @@ body {
 }
 /* End of Header Styling */
 
+
 /* Spacing / Headings Styling */
 .flex-center{
     display: flex;
@@ -136,17 +146,16 @@ body {
     justify-content: center;
 }
 
-h1{
-   font-size: 5em;
+h1,h2,h3,h4,h5{
    color: var(--font-clr);
    font-family: 'Archivo Narrow', sans-serif;
 }
 
-h2{
-   font-size: 2em;
-   color: var(--font-clr);
-   font-family: 'Archivo Narrow', sans-serif;
-}
+h1{font-size: 5rem;}
+h2{font-size: 2rem;}
+h3{font-size: 1.953rem;}
+h4{font-size: 1.563rem;}
+h5{font-size: 1.25rem;}
 
 
 
@@ -485,7 +494,8 @@ progress[value]::-moz-progress-bar {
   background-color: var(--progress-ylw);
   border-radius: 20px;
 }
- #progress-bar{
+
+#progress-bar{
   height: 22px;
   margin: 10px 0;
   background-color: var(--orange);
@@ -497,13 +507,6 @@ progress[value]::-moz-progress-bar {
 progress[value]{
   appearance:none;
   background-color: green;
-}
-
-.continue-container{
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  gap:10px;
 }
 
 
@@ -700,11 +703,16 @@ input:focus, textarea:focus {
     display: inline-block;
   }
 
-.dl-button, .add-button, .restore-button .btn.next {
+.dl-button, .add-button, .btn.next {
     display: flex;
     justify-content: flex-end;
     padding: 1rem;
     max-width: 1400px;
+}
+
+.restore-button{
+  display: flex;
+  justify-content: flex-end;
 }
 
 .pt-0{
