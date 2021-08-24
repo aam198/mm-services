@@ -27,15 +27,12 @@
         <aside>
           <h2><i class="fab fa-aws" aria-hidden="true"></i> MM Services </h2>
           
-          <a href="/index.html"  id="avail">
+          <a href="../index.html"  id="avail">
             <i class="fab fa-buffer" aria-hidden="true"></i>
             Available Files
           </a>
-          <a href="./archive.html" class="active" id="archive">
-            <i class="fas fa-archive" aria-hidden="true"></i>
-            Archive
-          </a>
-          <a href="./encode.html" id="encode">
+          
+          <a href="./encode.html"  id="encode">
             <i class="fa fa-upload" aria-hidden="true"></i>
             Encode Video Files
           </a>
@@ -47,9 +44,13 @@
             <i class="fas fa-search" aria-hidden="true"></i>
             Search Archive 
           </a>
+          <a href="./archive.html" class="active"  id="archive">
+            <i class="fas fa-archive" aria-hidden="true"></i>
+            Archive 
+          </a>
           
           <div class="description">
-            <p><i class="fas fa-info-circle"></i>User can archive their local files for safe storage and backup. Just select the location, in which the files will live, and the files will be archived to that location.</p></div>
+            <p><i class="fas fa-info-circle"></i>Upload files into AWS Deep Glacier storage. Users can archive their local files for safe storage and backup. Just select the location, in which the files will live, and the files will be archived to that location.</p></div>
           
         </aside>
         
@@ -58,6 +59,10 @@
             <div class="card">
 
               <div class="card-header">
+                <label class="checkbox-container">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
                 <h2 class="file-name">File Name</h2>
                 <h2 class="file-location">File Location</h2>
                 <h2 class="file-type">File Type</h2>
@@ -66,7 +71,7 @@
               </div>
 
               <div class="card-content">
-                <p>Upload Files. Browse to Folder location...</p>
+                <p>Browse to Folder location...</p>
 
                 <ul></ul>
 
