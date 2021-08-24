@@ -6,10 +6,10 @@
 
 let dropArea = document.getElementById("drop-area");
 const dragArea = document.querySelector(".drag-area");
-const dragText = document.querySelector("header");
+const dragText = document.getElementById("select-file");
 const button = document.querySelector("button");
 const icon = document.querySelector("icon");
-const input = document.querySelector("input");
+const fileElem = document.getElementById("fileElem");
 
 const nextBtn = document.getElementById("nextBtn");
 const modal = document.getElementById("myModal");
@@ -36,7 +36,7 @@ const backBtn = document.getElementById("backBtn");
 });
 
 button.addEventListener("click", () => {
-  input.click();
+  fileElem.click();
   dragArea.classList.add("active");
   dragText.textContent = "Select File to Upload";
 });
@@ -57,6 +57,7 @@ function highlight() {
 
 function unhighlight(e) {
   dropArea.classList.remove('active');
+  dragText.textContent = "Drag & Drop to Upload File";
 }
 
 function handleDrop(e) {
@@ -177,7 +178,6 @@ nextBtn.addEventListener("click", () => {
  }
 
 //  End of Modal
-
 
 
 

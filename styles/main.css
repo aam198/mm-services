@@ -81,6 +81,7 @@ body {
 }
 
 .continue-container{
+  margin-top: 1rem;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -274,7 +275,7 @@ section{
     max-width: 1400px;
     min-width: 900px;
     margin-right: 4%;
-    height: 50rem;
+    min-height: 50rem;
     width: 100%;
     border-radius: 14px;
     backdrop-filter: blur(20px);
@@ -410,13 +411,15 @@ li i:hover{
 
 .drag-area{
   border: 2px dashed var(--bkg-clr);
-  height: 500px;
-  width: 700px;
+  height: 600px;
+  width: 85%;
+  margin-top:1.5rem;
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .drag-area.active{
@@ -429,13 +432,14 @@ li i:hover{
   color: var(--orange);
 }
 
-.drag-area header{
+.drag-area h2{
   font-size: 30px;
   font-weight: 500;
   color: var(--font-dark);
 }
 
 .drag-area span{
+  font-family: 'Archivo Narrow', sans-serif;
   font-size: 25px;
   font-weight: 500;
   color: var(--font-dark);
@@ -463,7 +467,7 @@ li i:hover{
   border-radius: 5px;
 }
 
-.btn:disabled{
+.btn:disabled, .btn[disabled], .btn[disabled]:hover, .btn[disabled]:active {
   cursor: not-allowed;
   background-color: #e0e0e0;
   border: 1px dashed #292929;
