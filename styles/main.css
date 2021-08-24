@@ -385,7 +385,7 @@ li i {
 }
 
 li i:hover{
-  color: var(--red-clr-hover);
+  color: var(--red-hover);
 }
 
 /* Take out Remove button? */
@@ -532,10 +532,10 @@ progress[value]{
 
 .modal-box {
   margin: auto;
-  padding: 40px;
-  background: #fff;
+  padding: 30px;
+  background: var(--clr-white);
   border-radius: 5px;
-  width: 35%;
+  width: 45%;
   min-width: 450px;
   position: relative;
   z-index: 10;
@@ -570,6 +570,8 @@ progress[value]{
   padding: 30px 30px;
   text-align: center;
   font-size: 1.2rem;
+  font-family:var(--font-body);
+  line-spacing: 1.6;
 }
 
 .modal-box .navigation{
@@ -582,12 +584,12 @@ progress[value]{
 .modal-box .btn-sm {
   display: flex;
   flex-direction: row;
-  padding: 16px 18px;
-  margin: 0 5px;
+  padding: 16px 45px;
   border: none;
+  border-radius: 5px;
   background: rgba(45 68 105 / 100%);
   color: #F6F7F9;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.25s ease, background-color 0.4s ease;
   box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
@@ -607,7 +609,6 @@ progress[value]{
 
 .modal-box .remove-btn {
   background-color: var(--red-clr);
-  border: 1px solid #dd3c3c;
 }
 
 .modal-box .remove-btn:hover{
