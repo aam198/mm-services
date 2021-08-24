@@ -412,14 +412,14 @@ li i:hover{
 .drag-area{
   border: 2px dashed var(--bkg-clr);
   height: 600px;
-  width: 85%;
-  margin-top:1.5rem;
+  width: 90%;
+  margin-top: 3rem;
+  margin: 3rem 5% 1rem 5%;
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0 auto;
 }
 
 .drag-area.active{

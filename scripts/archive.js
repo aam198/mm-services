@@ -101,6 +101,10 @@ function updateProgress(fileNumber, percent) {
   let total = uploadProgress.reduce((tot, curr) => tot + curr, 0) / uploadProgress.length
   console.debug('update', fileNumber, percent, total);
   progressBar.value = total;
+
+  if (progressBar.value == 100){
+    dragText.textContent = "Drag & Drop to Upload File";
+  }
 }
 
 // When files are chosen
