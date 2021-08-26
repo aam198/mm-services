@@ -113,11 +113,11 @@ function handleFiles(files) {
   initializeProgress(files.length);
   files.forEach(uploadFile);
   files.forEach(previewFile);
-  if(files <= 0){
-    nextBtn.disabled = true;
+  if(files.length <= 0){
+    nextBtn.setAttribute("disabled", "");
   }
   else {
-    nextBtn.disabled = false;
+    nextBtn.removeAttribute("disabled");
   }
 }
 
@@ -151,14 +151,14 @@ function previewFile(file) {
      listItem.appendChild(close);
      close.className="fas fa-times";
 
+
     close.addEventListener("click", () =>{
       setTimeout(function(){
         list.removeChild(listItem);
       }, 1000);
         listItem.classList.remove('fadeIn');
-        listItem.classList.add('fadeOut');
+        listItem.classList.add('fadeOut');  
     });
-
 }
 
 
