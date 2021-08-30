@@ -133,6 +133,8 @@ function previewFile(file) {
     const checkmark = document.createElement('span');
     const listText = document.createElement('span');
     const close = document.createElement('i');
+    const size = file.size;
+    const name =file.name;
    
     listItem.classList.add('fadeIn');
     listItem.classList.add('verify');
@@ -157,8 +159,9 @@ function previewFile(file) {
         list.removeChild(listItem);
       }, 1000);
         listItem.classList.remove('fadeIn');
-        listItem.classList.add('fadeOut');  
+        listItem.classList.add('fadeOut'); 
     });
+
 }
 
 
