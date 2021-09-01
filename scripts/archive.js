@@ -116,18 +116,21 @@ function listFile(file) {
     let listText = document.createElement('span');
     const close = document.createElement('i');
     const size = file.size;
-    const name =file.name;
 
+    console.log(file.value);
     const file_name_string = file.name;
     const file_name_array = file_name_string.split(".");
-    const file_extension = file_name_array[file_name_array.length-1];
-    console.log(file_extension);
+    console.log(file_name_array);
+    const file_name= file_name_array[0];
+    const file_type = file_name_array[file_name_array.length-1];
+
 
     const file_byte = new Array('Bytes', 'KB', 'MB', 'GB');
-    fSize = size;
-     i=0;
+    let fSize = size;
+    var i=0;
      while(fSize>900){fSize/=1024;i++;}
 
+    const file_size = (Math.round(fSize*100)/100)+' '+file_byte[i];
    
     listItem.classList.add('fadeIn');
     listItem.classList.add('verify');
@@ -140,9 +143,9 @@ function listFile(file) {
      checkboxContain.appendChild(checkmark);
      list.appendChild(listItem);
      listItem.appendChild(listText);
-     listText.textContent += file.name;
-     listText.textContent += file_extension;
-     listText.textContent += (Math.round(fSize*100)/100)+' '+file_byte[i];
+     listText.textContent += file_name;
+     listText.textContent += file_type;
+     listText.textContent += file_size;
 
      listItem.appendChild(close);
      close.className="fas fa-times";
