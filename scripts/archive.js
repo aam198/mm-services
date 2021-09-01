@@ -5,6 +5,7 @@ const dragText = document.getElementById("select-file");
 const button = document.querySelector("button");
 const icon = document.querySelector("icon");
 const fileElem = document.getElementById("fileElem");
+const addedFiles = document.querySelector("#addedFiles");
 
 const nextBtn = document.getElementById("nextBtn");
 const modal = document.getElementById("myModal");
@@ -121,6 +122,12 @@ function listFile(file) {
     const file_name_array = file_name_string.split(".");
     const file_extension = file_name_array[file_name_array.length-1];
     console.log(file_extension);
+
+    const file_byte = new Array('Bytes', 'KB', 'MB', 'GB');
+    fSize = size;
+     i=0;
+     while(fSize>900){fSize/=1024;i++;}
+
    
     listItem.classList.add('fadeIn');
     listItem.classList.add('verify');
@@ -133,11 +140,14 @@ function listFile(file) {
      checkboxContain.appendChild(checkmark);
      list.appendChild(listItem);
      listItem.appendChild(listText);
-     listText.textContent = file.name;
+     listText.textContent += file.name;
+     listText.textContent += file_extension;
+     listText.textContent += (Math.round(fSize*100)/100)+' '+file_byte[i];
 
      listItem.appendChild(close);
      close.className="fas fa-times";
 
+     console.log(size);
      
     close.addEventListener("click", () =>{
       setTimeout(function(){
