@@ -1,10 +1,5 @@
-// const realFileBtn = document.getElementById("real-file");
-// const customBtn = document.getElementById("addFolder");
 
-// const addFileBtn = document.getElementById("addFile");
-// const customTxt = document.getElementById("custom-text");
-
-let dropArea = document.getElementById("drop-area");
+const dropArea = document.getElementById("drop-area");
 const dragArea = document.querySelector(".drag-area");
 const dragText = document.getElementById("select-file");
 const button = document.querySelector("button");
@@ -13,37 +8,10 @@ const fileElem = document.getElementById("fileElem");
 
 const nextBtn = document.getElementById("nextBtn");
 const modal = document.getElementById("myModal");
-const span = document.getElementsByClassName("close") [0];
+const modalClose = document.getElementsByClassName("close") [0];
 const backBtn = document.getElementById("backBtn");
 
 
-
-
-//Prevent default drag behaviors
-['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-  dropArea.addEventListener(eventName, preventDefaults, false)   
-  document.body.addEventListener(eventName, preventDefaults, false)
-});
-
-
-// Highlight drop area when item is dragged over it
-['dragenter', 'dragover'].forEach(eventName => {
-  dropArea.addEventListener(eventName, highlight, false)
-});
-
-['dragleave', 'drop'].forEach(eventName => {
-  dropArea.addEventListener(eventName, unhighlight, false)
-});
-
-button.addEventListener("click", () => {
-  fileElem.click();
-  dragArea.classList.add("active");
-  dragText.textContent = "Select File to Upload";
-});
-
-
-// Handle dropped files
-dropArea.addEventListener('drop', handleDrop, false)
 
 function preventDefaults (e) {
   e.preventDefault();
@@ -66,20 +34,6 @@ function handleDrop(e) {
 
   handleFiles(files)
 }
-
-
-//If user Drag File Over DropArea
-dragArea.addEventListener("dragover", (event) => {
-    event.preventDefault(); //Prevents default behavior 
-    dragArea.classList.add("active");
-    dragText.textContent = "Release to Upload File";
-});
-
-//If user leave dragged File from DropArea
-dragArea.addEventListener("dragleave", ()=>{
-    dragArea.classList.remove("active");
-    dragText.textContent = "Drag & Drop to Upload File";
-  });
 
 
 // Progress Bar when uploading files
@@ -112,7 +66,7 @@ function handleFiles(files) {
   files = [...files]
   initializeProgress(files.length);
   files.forEach(uploadFile);
-  files.forEach(previewFile);
+  files.forEach(listFile);
   if(files.length <= 0){
     nextBtn.setAttribute("disabled", "");
   }
@@ -120,73 +74,6 @@ function handleFiles(files) {
     nextBtn.removeAttribute("disabled");
   }
 }
-
-function previewFile(file) {
-  let reader = new FileReader()
-  reader.readAsDataURL(file)
-  
-    dragArea.classList.remove("active");
-    const list = document.querySelector('ul');
-    const listItem = document.createElement('li');
-    const checkboxContain = document.createElement('label');
-    const inputCheck = document.createElement('input');
-    const checkmark = document.createElement('span');
-    const listText = document.createElement('span');
-    const close = document.createElement('i');
-    const size = file.size;
-    const name =file.name;
-   
-    listItem.classList.add('fadeIn');
-    listItem.classList.add('verify');
-    checkboxContain.classList.add('checkbox-container');
-    inputCheck.type="checkbox";
-    checkmark.classList.add('checkmark');
-
-     listItem.appendChild(checkboxContain);
-     checkboxContain.appendChild(inputCheck);
-     checkboxContain.appendChild(checkmark);
-     list.appendChild(listItem);
-     listItem.appendChild(listText);
-     listText.textContent = file.name;
-
-
-     listItem.appendChild(close);
-     close.className="fas fa-times";
-
-
-    close.addEventListener("click", () =>{
-      setTimeout(function(){
-        list.removeChild(listItem);
-      }, 1000);
-        listItem.classList.remove('fadeIn');
-        listItem.classList.add('fadeOut'); 
-    });
-
-}
-
-
-// Open Modal
-nextBtn.addEventListener("click", () => {
-  modal.style.display = "block";
-});
- 
- span.addEventListener("click", () => {
-  modal.style.display = "none";
- });
-
- backBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
- 
- window.onclick = function (event) {
-   if (event.target == modal) {
-     modal.style.display = "none";
-   }
- }
-
-//  End of Modal
-
-
 
 function uploadFile(file, i) {
   const url = 'https://api.cloudinary.com/v1_1/joezimim007/image/upload';
@@ -213,6 +100,120 @@ function uploadFile(file, i) {
   formData.append('file', file);
   xhr.send(formData);
 }
+
+
+function listFile(file) {
+  let reader = new FileReader()
+  reader.readAsDataURL(file)
+  
+    dragArea.classList.remove("active");
+    let list = document.querySelector('ul');
+    let listItem = document.createElement('li');
+    const checkboxContain = document.createElement('label');
+    const inputCheck = document.createElement('input');
+    const checkmark = document.createElement('span');
+    let listText = document.createElement('span');
+    const close = document.createElement('i');
+    const size = file.size;
+    const name =file.name;
+
+    const file_name_string = file.name;
+    const file_name_array = file_name_string.split(".");
+    const file_extension = file_name_array[file_name_array.length-1];
+    console.log(file_extension);
+   
+    listItem.classList.add('fadeIn');
+    listItem.classList.add('verify');
+    checkboxContain.classList.add('checkbox-container');
+    inputCheck.type="checkbox";
+    checkmark.classList.add('checkmark');
+
+     listItem.appendChild(checkboxContain);
+     checkboxContain.appendChild(inputCheck);
+     checkboxContain.appendChild(checkmark);
+     list.appendChild(listItem);
+     listItem.appendChild(listText);
+     listText.textContent = file.name;
+
+     listItem.appendChild(close);
+     close.className="fas fa-times";
+
+     
+    close.addEventListener("click", () =>{
+      setTimeout(function(){
+        list.removeChild(listItem);
+      }, 1000);
+        listItem.classList.remove('fadeIn');
+        listItem.classList.add('fadeOut'); 
+    });
+
+}
+
+//Event Listeners
+
+//Prevent default drag behaviors
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+  dropArea.addEventListener(eventName, preventDefaults, false)   
+  document.body.addEventListener(eventName, preventDefaults, false)
+});
+
+
+// Highlight drop area when item is dragged over it
+['dragenter', 'dragover'].forEach(eventName => {
+  dropArea.addEventListener(eventName, highlight, false)
+});
+
+['dragleave', 'drop'].forEach(eventName => {
+  dropArea.addEventListener(eventName, unhighlight, false)
+});
+
+button.addEventListener("click", () => {
+  fileElem.click();
+  dragArea.classList.add("active");
+  dragText.textContent = "Select File to Upload";
+});
+
+
+// Handle dropped files
+dropArea.addEventListener('drop', handleDrop, false)
+
+//If user Drag File Over DropArea
+dragArea.addEventListener("dragover", (event) => {
+  event.preventDefault(); //Prevents default behavior 
+  dragArea.classList.add("active");
+  dragText.textContent = "Release to Upload File";
+});
+
+//If user leave dragged File from DropArea
+dragArea.addEventListener("dragleave", ()=>{
+  dragArea.classList.remove("active");
+  dragText.textContent = "Drag & Drop to Upload File";
+});
+
+
+// Open Modal
+nextBtn.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+ 
+ modalClose.addEventListener("click", () => {
+  modal.style.display = "none";
+ });
+
+ backBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+ 
+ window.onclick = function (event) {
+   if (event.target == modal) {
+     modal.style.display = "none";
+   }
+ }
+
+//  End of Modal
+
+
+
 
 
 // Older Upload function but can take out
