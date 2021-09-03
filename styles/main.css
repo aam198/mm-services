@@ -513,6 +513,10 @@ progress[value]{
   background-color: green;
 }
 
+.upload_files input{
+  background: transparent;
+  border: 0;
+}
 
 /* Drag and Drop Area Modal Styles */
 .modal{
