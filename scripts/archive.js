@@ -117,14 +117,14 @@ function listFile(file) {
     const close = document.createElement('i');
     const size = file.size;
 
-    console.log(file.value);
     const file_name_string = file.name;
     const file_name_array = file_name_string.split(".");
     console.log(file_name_array);
     const file_name= file_name_array[0];
     const file_type = file_name_array[file_name_array.length-1];
 
-
+    document.getElementById('name').value = file_name_string;
+    
     const file_byte = new Array('Bytes', 'KB', 'MB', 'GB');
     let fSize = size;
     var i=0;

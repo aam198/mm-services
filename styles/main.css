@@ -652,19 +652,19 @@ progress[value]{
 /* Search bar Styling */
 
 .card-search {
-    margin-bottom: .8rem;
+  margin-bottom: .8rem;
 }
 .search-bar {
-    height: 40px;
-    display: flex;
-    width: 100%;
-    padding-left: 16px;
-    border-radius: 4px;
-    padding: 0 30px;
-    margin-top: 1rem;
-   }
+  height: 40px;
+  display: flex;
+  width: 100%;
+  padding-left: 16px;
+  border-radius: 4px;
+  padding: 0 30px;
+  margin-top: 1rem;
+  }
    
-input {
+.search-bar input {
   width: 15rem;
   height: 100%;
   border: none;
@@ -683,14 +683,14 @@ input {
   transition: width 0.4s ease-in-out;
 }
    
-input::placeholder {
+.search-bar input::placeholder {
   font-family: 'Libre Franklin', sans-serif;
   color: var(--inactive-color);
   font-size: 15px;
   font-weight: 500;
 }
     
-input:focus, textarea:focus {      
+.search-bar input:focus, textarea:focus {      
      outline: none !important;     
      border-color: #000657;     
      box-shadow: 0 0 5px #000657;
