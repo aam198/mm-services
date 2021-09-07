@@ -123,7 +123,6 @@ function listFile(file) {
     const file_name= file_name_array[0];
     const file_type = file_name_array[file_name_array.length-1];
 
-    document.getElementById('name').value = file_name_string;
     
     const file_byte = new Array('Bytes', 'KB', 'MB', 'GB');
     let fSize = size;
@@ -141,6 +140,7 @@ function listFile(file) {
      listItem.appendChild(checkboxContain);
      checkboxContain.appendChild(inputCheck);
      checkboxContain.appendChild(checkmark);
+     document.getElementById('name').value = file_name_string;
      list.appendChild(listItem);
      listItem.appendChild(listText);
      listText.textContent += file_name;
