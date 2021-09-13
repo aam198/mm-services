@@ -56,7 +56,7 @@ function updateProgress(fileNumber, percent) {
   let total = uploadProgress.reduce((tot, curr) => tot + curr, 0) / uploadProgress.length
   console.debug('update', fileNumber, percent, total);
   progressBar.value = total;
-
+  //add in toast notification below for 100 percent complete
   if (progressBar.value == 100){
     dragText.textContent = "Drag & Drop to Upload File";
   }
@@ -108,15 +108,15 @@ function listFile(file) {
   reader.readAsDataURL(file)
   
     dragArea.classList.remove("active");
-    let list = document.querySelector('ul');
-    let listItem = document.createElement('li');
+    const fileDetails = document.getElementById('fileDetails');
+    const listItem = document.createElement('div');
     const checkboxContain = document.createElement('label');
     const inputCheck = document.createElement('input');
     const checkmark = document.createElement('span');
-    let listText = document.createElement('span');
+    const listText = document.createElement('span');
     const close = document.createElement('i');
+    
     const size = file.size;
-
     const file_name_string = file.name;
     const file_name_array = file_name_string.split(".");
     console.log(file_name_array);
@@ -130,8 +130,12 @@ function listFile(file) {
      while(fSize>900){fSize/=1024;i++;}
 
     const file_size = (Math.round(fSize*100)/100)+' '+file_byte[i];
+
+    let  nodesString = "";
+
+    nodesString += "<div class='file-name'>" + file_name + "</div>" + "<div class='file-type'>" + file_type + "</div>" + "<div class='file-size'>" + file_size + "</div>"; 
    
-    listItem.classList.add('fadeIn');
+    fileDetails.classList.add('fadeIn');
     listItem.classList.add('verify');
     checkboxContain.classList.add('checkbox-container');
     inputCheck.type="checkbox";
@@ -140,24 +144,28 @@ function listFile(file) {
      listItem.appendChild(checkboxContain);
      checkboxContain.appendChild(inputCheck);
      checkboxContain.appendChild(checkmark);
-     document.getElementById('name').value = file_name_string;
-     list.appendChild(listItem);
+     fileDetails.appendChild(listItem);
+     fileDetails.innerHTML += nodesString;
+
+     
      listItem.appendChild(listText);
      listText.textContent += file_name;
      listText.textContent += file_type;
      listText.textContent += file_size;
 
-     listItem.appendChild(close);
-     close.className="fas fa-times";
+     fileDetails.appendChild(close);
+     close.className="fas fa-times remove";
 
      console.log(size);
      
     close.addEventListener("click", () =>{
       setTimeout(function(){
-        list.removeChild(listItem);
-      }, 1000);
-        listItem.classList.remove('fadeIn');
-        listItem.classList.add('fadeOut'); 
+        while (fileDetails.firstChild) {
+          fileDetails.removeChild(fileDetails.firstChild);
+        }
+       }, 1000);
+       fileDetails.classList.remove('fadeIn');
+       fileDetails.classList.add('fadeOut');
     });
 
 }

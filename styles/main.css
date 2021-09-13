@@ -21,7 +21,7 @@
     --orange: #ff9900;
     --progress-ylw: #ffc400;
     --red-clr: #c35353;
-    --red-hover: #de3838;
+    --red-clr-hover: #de3838;
     --clr-white: #ffffff; 
 
     --banner-color: rgba(45 68 105 / 100%);
@@ -310,12 +310,12 @@ section{
 .file-name{
     display:flex;
     justify-content: center;
-    width: 30%;
+    width: 40%;
 }
 .file-location{
     display:flex;
     justify-content: center;
-    width: 40%;
+    width: 25%;
 }
 .file-type{
     display:flex;
@@ -325,7 +325,7 @@ section{
 .file-size{
     display:flex;
     justify-content: center;
-    width: 15%;
+    width: 20%;
 }
 .status{
     display:flex;
@@ -360,6 +360,35 @@ section{
 
 
 /* Drag and Drop Area Archive Area */
+
+.file-details{
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+
+.verify {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+i.remove {
+  color: var(--red-clr);
+  cursor: pointer;
+  font-size: 25px;
+  width: 15%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+i.remove:hover{
+  color: var(--red-clr-hover);
+}
 
 
 li{
