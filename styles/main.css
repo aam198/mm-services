@@ -5,7 +5,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
 :root{
@@ -15,7 +14,10 @@
 
     --font-clr: #F6F7F9;
     --font-dark: #000657;
+
+    --font-header: 'Archivo Narrow', sans-serif;
     --font-body:'Libre Franklin', sans-serif;
+    --font-small: 'Noto Sans', sans-serif;
     
     --dashed: rgba(45 68 105 / 100%);
     --orange: #ff9900;
@@ -342,7 +344,7 @@ section{
 
 .card-2{
     color: #535a62;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-size: 1em;
     background: #fff;
     padding: 10px 10px;
@@ -477,9 +479,11 @@ li i:hover{
 .drag-area .btn{
   padding: 10px 25px;
   border: none;
+  margin-right: 0px;
   background: rgba(45 68 105 / 100%);
   color: var(--font-clr);
-  font-size: 1.5em;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.6rem;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
   box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
