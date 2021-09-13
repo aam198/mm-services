@@ -133,7 +133,7 @@ function listFile(file) {
 
     let  nodesString = "";
 
-    nodesString += "<div class='file-name'>" + file_name + "</div>" + "<div class='file-type'>" + file_type + "</div>" + "<div class='file-size'>" + file_size + "</div>"; 
+    nodesString += "<div class='file-location'>" + "</div>" + "<div class='file-name'>" + file_name + "</div>"  +"<div class='file-type'>" + file_type + "</div>" + "<div class='file-size'>" + file_size + "</div>" + "<br>"; 
    
     fileDetails.classList.add('fadeIn');
     listItem.classList.add('verify');
