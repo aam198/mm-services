@@ -158,7 +158,7 @@ function listFile(file) {
      
     close.addEventListener("click", () =>{
       setTimeout(function(){
-        while (fileList.firstChild) {
+        while (fileDetails.firstChild) {
           fileList.removeChild(fileList.firstChild);
         }
        }, 1000);
