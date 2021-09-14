@@ -109,6 +109,7 @@ function listFile(file) {
   
     dragArea.classList.remove("active");
     const fileDetails = document.getElementById('fileDetails');
+    const fileList= document.createElement('div');
     const listItem = document.createElement('div');
     const checkboxContain = document.createElement('label');
     const inputCheck = document.createElement('input');
@@ -133,39 +134,36 @@ function listFile(file) {
 
     let  nodesString = "";
 
-    nodesString += "<div class='file-location'>" + "</div>" + "<div class='file-name'>" + file_name + "</div>"  +"<div class='file-type'>" + file_type + "</div>" + "<div class='file-size'>" + file_size + "</div>" + "<br>"; 
+    nodesString += "<div class='file-location'>" + "</div>" + "<div class='file-name'>" + file_name + "</div>"  +"<div class='file-type'>" + file_type + "</div>" + "<div class='file-size'>" + file_size + "</div>" ; 
    
-    fileDetails.classList.add('fadeIn');
+    fileList.classList.add('fadeIn');
+    fileList.classList.add('fileList');
     listItem.classList.add('verify');
     checkboxContain.classList.add('checkbox-container');
     inputCheck.type="checkbox";
     checkmark.classList.add('checkmark');
 
-     listItem.appendChild(checkboxContain);
-     checkboxContain.appendChild(inputCheck);
-     checkboxContain.appendChild(checkmark);
-     fileDetails.appendChild(listItem);
-     fileDetails.innerHTML += nodesString;
+    fileDetails.appendChild(fileList);
+    fileList.appendChild(listItem);
+    listItem.appendChild(checkboxContain);
+    checkboxContain.appendChild(inputCheck);
+    checkboxContain.appendChild(checkmark);
+    fileList.innerHTML += nodesString;
 
      
-     listItem.appendChild(listText);
-     listText.textContent += file_name;
-     listText.textContent += file_type;
-     listText.textContent += file_size;
+    fileList.appendChild(close);
+    close.className="fas fa-times remove";
 
-     fileDetails.appendChild(close);
-     close.className="fas fa-times remove";
-
-     console.log(size);
+    console.log(size);
      
     close.addEventListener("click", () =>{
       setTimeout(function(){
-        while (fileDetails.firstChild) {
-          fileDetails.removeChild(fileDetails.firstChild);
+        while (fileList.firstChild) {
+          fileList.removeChild(fileList.firstChild);
         }
        }, 1000);
-       fileDetails.classList.remove('fadeIn');
-       fileDetails.classList.add('fadeOut');
+       fileList.classList.remove('fadeIn');
+       fileList.classList.add('fadeOut');
     });
 
 }
