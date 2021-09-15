@@ -761,7 +761,7 @@ progress[value]{
 
 .dl-button, .add-button, .btn.next {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 1rem;
     max-width: 1400px;
 }

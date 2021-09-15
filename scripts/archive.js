@@ -158,8 +158,8 @@ function listFile(file) {
      
     close.addEventListener("click", () =>{
       setTimeout(function(){
-        while (fileDetails.firstChild) {
-          fileList.removeChild(fileList.firstChild);
+        if(fileDetails.firstChild) {
+          fileList.remove(fileList.firstChild);
         }
        }, 1000);
        fileList.classList.remove('fadeIn');
