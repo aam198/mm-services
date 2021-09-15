@@ -948,9 +948,4 @@ text-align: center;
     aside a{
         font-size: 1.2em;
     }
-   
-    .card-header > h2{
-        display:flex;
-        
-    }
 }
