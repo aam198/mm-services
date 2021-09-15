@@ -155,11 +155,15 @@ function listFile(file) {
     close.className="fas fa-times remove";
 
     console.log(size);
-     
+    console.log(fileDetails.childNodes.length);
     close.addEventListener("click", () =>{
       setTimeout(function(){
+        console.log(fileDetails.childNodes.length);
         if(fileDetails.firstChild) {
           fileList.remove(fileList.firstChild);
+        }
+        if(fileDetails.childNodes.length < 2){
+          nextBtn.setAttribute("disabled", "")
         }
        }, 1000);
        fileList.classList.remove('fadeIn');
