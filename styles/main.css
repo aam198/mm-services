@@ -83,10 +83,8 @@ body {
 }
 
 .continue-container{
-  margin-top: 1rem;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
   gap:10px;
 }
 
@@ -494,7 +492,7 @@ li i:hover{
   background: rgba(45 68 105 / 100%);
   color: var(--font-clr);
   font-family: inherit;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
   box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
@@ -756,12 +754,6 @@ progress[value]{
     display: inline-block;
   }
 
-.dl-button, .add-button, .btn.next {
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    max-width: 1400px;
-}
 
 .restore-button{
   display: flex;
@@ -779,17 +771,18 @@ progress[value]{
 }
 
 .btn{
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-family: var(--font-body);
     cursor: pointer;
     display:inline-block;
     width: 15rem;
     height: 4rem;
-    padding: 1rem;
+    padding: 0.7rem;
     margin-right: 3%;
     border-radius: 6px;
     border: 0;
     text-align: center;
+    text-transform: uppercase;
     margin-bottom: 1rem;
     background-color: var(--button-clr);
     text-decoration: none;
