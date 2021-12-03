@@ -2,12 +2,12 @@
 const dropArea = document.getElementById("drop-area");
 const dragArea = document.querySelector(".drag-area");
 const dragText = document.getElementById("select-file");
-const button = document.querySelector("button");
+const browseBtn = document.getElementById("browse-btn");
 const icon = document.querySelector("icon");
 const fileElem = document.getElementById("fileElem");
 const addedFiles = document.querySelector("#addedFiles");
 
-const nextBtn = document.getElementById("nextBtn");
+const encodeBtn = document.getElementById("encodeBtn");
 const modal = document.getElementById("myModal");
 const modalClose = document.getElementsByClassName("close") [0];
 const backBtn = document.getElementById("backBtn");
@@ -21,12 +21,12 @@ function preventDefaults (e) {
 
 function highlight() {
   dragArea.classList.add("active");
-  dragText.textContent = "Select File to Upload";
+  dragText.textContent = "Select File to Encode";
 }
 
 function unhighlight(e) {
-  dropArea.classList.remove('active');
-  dragText.textContent = "Drag & Drop to Upload File";
+  dropArea.classList.remove("active");
+  dragText.textContent = "Drag & Drop Assets to be Encoded";
 }
 
 function handleDrop(e) {
@@ -58,7 +58,7 @@ function updateProgress(fileNumber, percent) {
   progressBar.value = total;
   //add in toast notification below for 100 percent complete
   if (progressBar.value == 100){
-    dragText.textContent = "Drag & Drop to Upload File";
+    dragText.textContent = "Drag & Drop Assets to be Encoded";
   }
 }
 
@@ -66,13 +66,14 @@ function updateProgress(fileNumber, percent) {
 function handleFiles(files) {
   files = [...files]
   initializeProgress(files.length);
+  dragText.textContent = "Drag & Drop Assets to be Encoded";
   // files.forEach(uploadFile); 
   files.forEach(listFile);
   if(files.length <= 0){
-    nextBtn.setAttribute("disabled", "");
+    encodeBtn.setAttribute("disabled", "");
   }
   else {
-    nextBtn.removeAttribute("disabled");
+    encodeBtn.removeAttribute("disabled");
   }
 }
 
@@ -163,7 +164,7 @@ function listFile(file) {
           fileList.remove(fileList.firstChild);
         }
         if(fileDetails.childNodes.length < 2){
-          nextBtn.setAttribute("disabled", "")
+          encodeBtn.setAttribute("disabled", "")
         }
        }, 1000);
        fileList.classList.remove('fadeIn');
@@ -190,10 +191,9 @@ function listFile(file) {
   dropArea.addEventListener(eventName, unhighlight, false)
 });
 
-button.addEventListener("click", () => {
+browseBtn.addEventListener("click", () => {
   fileElem.click();
-  dragArea.classList.add("active");
-  dragText.textContent = "Select File to Upload";
+  highlight();
 });
 
 
@@ -210,12 +210,12 @@ dragArea.addEventListener("dragover", (event) => {
 //If user leave dragged File from DropArea
 dragArea.addEventListener("dragleave", ()=>{
   dragArea.classList.remove("active");
-  dragText.textContent = "Drag & Drop to Upload File";
+  dragText.textContent = "Drag & Drop Assets to be Encoded";
 });
 
 
 // Open Modal
-nextBtn.addEventListener("click", () => {
+encodeBtn.addEventListener("click", () => {
   modal.style.display = "block";
 });
  
