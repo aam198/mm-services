@@ -347,7 +347,7 @@ section{
 
 .card-content{
   font-family: var(--font-body);
-  padding: 0 20px;
+  padding: 0 1.5rem 0 0.7rem;
   margin: 1rem 0px;
 }
 
@@ -454,9 +454,9 @@ li i:hover{
 
 .drag-area{
   border: 2px dashed var(--bkg-clr);
-  height: 600px;
-  width: 90%;
-  margin: 1rem 5% 1rem 5%;
+  height: 650px;
+  width: 100%;
+  margin: 0.5rem 0.5rem;
   border-radius: 15px;
   display: flex;
   align-items: center;
