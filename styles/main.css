@@ -263,13 +263,19 @@ aside .description{
 /* End of Sidebar Styling */
 
 
-/* Styling for Main Section */
+/* Global Styling for Main Section */
 section{
   display: grid;
   grid-area: main;
   margin: 2.5% 1%;
 }
 
+/* When a info note is applied */
+section.with-note{
+  display: grid;
+  grid-area: main;
+  margin: 0 1%;
+}
 
 .card{
   background-color: var(--card-bg-color);
@@ -301,13 +307,14 @@ section{
   color: var(--font-dark); 
   text-transform: uppercase;   
 }
+
 .title-center{
   justify-content: center;
 }
+
 .card-header h2{
   color: var(--font-dark);
   font-size: 1.1em;
-    
 }
 
 .file-location{
@@ -343,7 +350,6 @@ section{
 }
 
 
-
 .card-content{
   font-family: var(--font-body);
   padding: 0 1.5rem 0 0.7rem;
@@ -368,6 +374,106 @@ section{
 }
 /* End Styling for Main Area - Cards */
 
+
+/*  File-info-note */
+
+.file-info-note{
+  min-width: 400px;
+  width: 80%;
+  height: auto;
+  border-left-color: var(--orange);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+  position: relative;
+  margin: 1rem auto;
+  padding: 0 .6rem;
+  border-left: .2rem solid #fcbf49;
+  border-radius: .1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color:var(--blue-font-clr);
+  position: relative;
+}
+ .file-info-note > .title{
+  display: flex;
+  align-items: center;
+  margin: 0 -.6rem;
+  padding: .5rem .6rem .5rem .6rem;
+  border-bottom: .05rem solid var(--orange);
+  border-bottom-color: var(--orange);
+  background-color: rgba(252,191,73,.3);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--font-dark);
+  font-weight: bold;
+}
+
+.title::before{
+  position: absolute;
+  font-size: 1rem;
+}
+.icon-color{
+  color: #ff9900;
+  margin-right: 6px;
+}
+
+.file-info-note p {
+  font-family: var(--font-body);
+  padding: 1rem 1rem;
+  color: var(--font-dark);
+  font-size: 1.1rem;
+}
+
+.file-info-note p:nth-child(2){
+  padding-bottom: 0.1rem;
+}
+
+.file-info-note .file-name-convention{
+  position: relative;
+  font-weight: bold;
+
+}
+
+span.file-name-convention::before {
+  content: ""; 
+  display: inline-block;
+  position: absolute;
+  left: -0.1px;
+  right: -0.1px;
+  bottom: -6px;
+  height: 30%;
+  transform-origin: bottom;
+  background-color: var(--orange);
+  opacity: 1;
+  transform: rotate(-2deg);
+  z-index: -1;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* End of file-info-note */
 
 /* Drag and Drop Area Archive Area */
 
@@ -453,7 +559,8 @@ li i:hover{
 
 .drag-area{
   border: 2px dashed var(--bkg-clr);
-  height: 650px;
+  min-height: 700px;
+  height: auto;
   width: 100%;
   margin: 0.5rem 0.5rem;
   border-radius: 15px;
